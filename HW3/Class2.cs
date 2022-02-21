@@ -9,9 +9,8 @@ namespace HW3
         public Predicate<int> Calc(Func<int, int, int> delegateForMultipleMethod, int value1, int value2)
         {
             ResultValue = delegateForMultipleMethod(value1, value2);
-            Predicate<int> delegateForResultMethod = Result;
 
-            return delegateForResultMethod;
+            return new Predicate<int>(Result);
         }
 
         public bool Result(int value)
